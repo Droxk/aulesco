@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		<title>Aulesco</title>
+		<script type="text/javascript" src="./js/login.js"></script>
+		<link rel="stylesheet" type="text/css" href="./css/login.css">
+		<link rel="stylesheet" type="text/css" href="./css/general.css">
+		<link rel="icon" href="./img/book.png">
+	</head>
+	<body>
+		<div id="header">
+			<img src="./img/logo250x250.png" class="img-responsive center-block" alt="logo" id="logo">
+		</div>
+		<nav class="navbar navbar-inverse navbar-static-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span> 
+					</button>
+					<a class="navbar-brand" href="./login.html">Aulesco</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="./registro.html"><span class="glyphicon glyphicon-user"></span> Registro</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Ayuda</a></li>
+						<li><a href="./login.html"><span class="glyphicon glyphicon-refresh"></span> Recargar</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2" id="login_div">
+						<em><u>Hecho</u>: Diseño completo (Responsive 100%), 
+						Obtención de usuarios de la base de datos mediante AJAX y PHP,
+						Generación aleatoria de casillas de la contraseña que estaran bloqueadas,
+						Base de datos con datos insertados.</em>
+						<br><br>
+						<em><u>Por hacer</u>: Implementar el codigo js de validaciones ya hecho,
+						y el codigo restante del teclado, validación de la contraseña mediante AJAX y PHP</em>
+						<h2>Inicio de sesión</h2>
+						<form action="/action_page.php">
+							<div class="form-group">
+								<label for="email">Usuario:</label>
+								<select class="form-control" id="select_usuario">
+									<!--ds001, ds002, ds005, ds015, ds030, ds090, ds099-->
+									<option id="opt000" value="ds000">Usuario</option>
+									
+								</select>
+							</div>
+							<label for="div_pwd">Clave:</label>
+							<div class="text-center" id="div_pwd">
+								<input type="text" id="pwdBox1" class="text-center" value="" readonly>
+								<input type="text" id="pwdBox2" class="text-center" value="" readonly>
+								<input type="text" id="pwdBox3" class="text-center" value="" readonly>
+								<input type="text" id="pwdBox4" class="text-center" value="" readonly>
+								<input type="text" id="pwdBox5" class="text-center" value="" readonly>
+								<input type="text" id="pwdBox6" class="text-center" value="" readonly>
+								
+								<div id="div_teclado" align="center">
+									<table class="table-condensed">
+									  <tr>
+										<td><button type="button" class="btn btn-info">0</button></td>
+										<td><button type="button" class="btn btn-info">1</button></td>
+										<td><button type="button" class="btn btn-info">2</button></td>
+										<td><button type="button" class="btn btn-info">3</button></td>
+									  </tr>
+									  <tr>
+										<td><button type="button" class="btn btn-info">4</button></td>
+										<td><button type="button" class="btn btn-info">5</button></td>
+										<td><button type="button" class="btn btn-info">6</button></td>
+										<td><button type="button" class="btn btn-info">7</button></td>
+									  </tr>
+									  <tr>
+										<td><button type="button" class="btn btn-info">8</button></td>
+										<td><button type="button" class="btn btn-info">9</button></td>
+										<td><button type="button" class="btn btn-info">CE</button></td>
+										<td><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left"></span></button></td>
+									  </tr>
+									</table>
+								</div>
+							</div>
+							<div class="text-center">
+								<button type="submit" class="btn btn-primary">Iniciar sesión</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

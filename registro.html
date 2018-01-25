@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		<title>Aulesco</title>
+		<script type="text/javascript" src="./js/registro.js"></script>
+		<link rel="stylesheet" type="text/css" href="./css/registro.css">
+		<link rel="stylesheet" type="text/css" href="./css/general.css">
+		<link rel="icon" href="./img/book.png">
+	</head>
+	<body>
+		<div id="header">
+			<img src="./img/logo250x250.png" class="img-responsive center-block" alt="logo" id="logo">
+		</div>
+		<nav class="navbar navbar-inverse navbar-static-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span> 
+					</button>
+					<a class="navbar-brand" href="./login.html">Aulesco</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="./login.html"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Ayuda</a></li>
+						<li><a href="./login.html"><span class="glyphicon glyphicon-refresh"></span> Recargar</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2" id="login_div">
+						<h2>Registro</h2>
+						<div class="row">
+							<form>
+								<div class="col-md-6 form-group">
+									<label>Identificador: </label>
+									<select class="form-control" id="idreg_select">
+										<option id="opt00" value="selecciona usuario">Selecciona Usuario</option>
+										
+									</select>
+									<!-- <input id="identificador_input" class="form-control" type="text" placeholder="ds000" readonly> -->
+								</div>
+								<div class="col-md-6 form-group" id="nombre_div">
+									<label>Nombre: </label>
+									<input id="nombre_input" class="form-control" type="text" placeholder="Nombre Completo">
+								</div>
+								<div class="col-md-6 form-group" id="icm_div">
+									<label>Abrev. ICM</label>
+									<input id="icm_input" class="form-control" type="text" placeholder="ICM (ej: AAA00)">
+								</div>
+								<div class="col-md-6 form-group" id="departamento_div">
+									<label>Departamento: </label>
+									<select class="form-control" id="depart_select">
+										
+									</select>
+									<!-- <input id="departamento_input" class="form-control" type="text" placeholder="Departamento"> -->
+								</div>
+								<div class="col-md-6 form-group">
+									<label>Tutor: </label>
+									<select class="form-control" id="tutor_select">
+										<option value="El profesor no es tutor">Selecciona Usuario</option>
+										
+									</select>
+									<!-- <input id="tutor_input" class="form-control" type="text" placeholder="Grupo/No es tutor"> -->
+								</div>
+								<div class="col-md-6 form-group" id="email_div">
+									<label>Email: </label>
+									<input id="email_input" class="form-control" type="text" placeholder="ej: ejemplo@direccion.com">
+								</div>
+								<div class="col-md-6 form-group" id="clave_div">
+									<label>Clave: </label>
+									<input id="clave_input" class="form-control" type="password" placeholder="Clave de acceso">
+								</div>
+								<div class="col-md-6 form-group" id="claverep_div">
+									<label>Repita Clave: </label>
+									<input id="claverep_input" class="form-control" type="password" placeholder="Rapita la clave de acceso">
+								</div>
+								<div class="text-center">
+									<button type="reset" class="btn btn-info">Guardar</button>
+								</div>
+							</form>
+						</div>
+						
+						
+						<!--
+						<form action="/action_page.php" class="form-inline text-center">
+							<div class="form-group">
+								<label for="email">Usuario:</label>
+								<select class="form-control" id="select_usuario">
+									<option id="opt000" value="ds000">Usuario</option>
+									
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="email">Email address:</label>
+								<input type="email" class="form-control" id="email">
+							</div>
+							<div class="form-group">
+								<label for="pwd">Password:</label>
+								<input type="password" class="form-control" id="pwd">
+							</div>
+							<div class="text-center">
+								<button type="submit" class="btn btn-primary">Iniciar sesión</button>
+							</div>
+						</form>
+						-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+body {
+	background-color: #fcfcfc;
+	min-width: 300px;
+}
+
+#logo {
+	width: 50%;
+	max-width:200px;
+}
+
+#header{
+	background-size: cover;
+	background-color: #3a3a3a;
+	background-image: url("./../img/header.jpg");
+}
+
+#logo{
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+
+/* Title */
+.navbar-inverse .navbar-brand {
+    color: #efad32;
+}
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+    color: #fcfcfc;
+}
