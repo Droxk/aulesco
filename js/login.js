@@ -25,7 +25,7 @@ function prepararPeticion(){
 
 // Realizar peticion HTTP
 function realizarPeticion(){
-	peticion_http_txt.open('POST', 'http://192.168.3.176/workspace/aplicacion/php/load_users.php', true);
+	peticion_http_txt.open('POST', 'http://192.168.3.176/workspace/aulesco/php/load_users.php', true);
 	peticion_http_txt.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	peticion_http_txt.send(null);
 }

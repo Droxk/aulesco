@@ -19,6 +19,7 @@ function generarOptionsRegistro(){
 	}
 }
 
+// probando añadir una clase para la validacion
 function testError(){
 	claveDiv.className += " has-error";
 }
@@ -41,7 +42,7 @@ function prepararPeticion(){
 
 // Realizar peticion HTTP
 function realizarPeticion(){
-	peticion_http.open('GET', 'http://192.168.3.176/workspace/aplicacion/js/archivos/departamentos.txt', true);
+	peticion_http_txt.open('GET', 'http://192.168.3.176/workspace/aulesco/js/archivos/departamentos.txt', true);
 	peticion_http_txt.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	peticion_http_txt.send(null);
 }
@@ -50,7 +51,8 @@ function realizarPeticion(){
 function obtenerContenido() {
 	if(peticion_http_txt.readyState == 4) {
 		if(peticion_http_txt.status == 200) {
-			idRegSelect.innerHTML += peticion_http_txt.responseText;	  
+			depart_select.innerHTML += peticion_http_txt.responseText;
+			console.log(peticion_http_txt.responseText);
 		}
 	}
 }
