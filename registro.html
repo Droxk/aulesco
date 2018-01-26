@@ -43,64 +43,70 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2" id="login_div">
+					<h2>Registro / Modificación</h2>
+					<div class="row">
+						<form>
+							<div class="col-md-6 form-group" id="identificador_div">
+								<label>Identificador: </label>
+								<select class="form-control" id="idreg_select">
+									<option id="default" value="selecciona usuario">Selecciona Usuario</option>
+									
+								</select>
+							</div>
+							<div class="col-md-6 form-group" id="nombre_div">
+								<label>Nombre: </label>
+								<input id="nombre_input" class="form-control" type="text" placeholder="Nombre Completo" required />
+							</div>
+							<div class="col-md-6 form-group" id="icm_div">
+								<label>Abrev. ICM</label>
+								<input id="icm_input" class="form-control" type="text" placeholder="ICM (ej: AAA00)" required>
+							</div>
+							<div class="col-md-6 form-group" id="departamento_div">
+								<label>Departamento: </label>
+								<select class="form-control" id="depart_select">
+									
+								</select>
+							</div>
+							<div class="col-md-6 form-group">
+								<label>Tutor: </label>
+								<select class="form-control" id="tutor_select">
+									<option>El profesor no es tutor</option>
+									
+								</select>
+							</div>
+							<div class="col-md-6 form-group" id="email_div">
+								<label>Email: </label>
+								<input id="email_input" class="form-control" type="text" placeholder="ej: ejemplo@direccion.com" required>
+							</div>
+							<div class="col-md-6 form-group" id="clave_div">
+								<label>Clave: </label>
+								<input id="clave_input" class="form-control" type="password" placeholder="Clave de acceso" required>
+							</div>
+							<div class="col-md-6 form-group" id="claverep_div">
+								<label>Repita Clave: </label>
+								<input id="claverep_input" class="form-control" type="password" placeholder="Rapita la clave de acceso" required>
+							</div>
+							<div class="col-md-12 form-group">
+								<div class="">
+									<input type="reset" class="btn btn-default btn-xs" value="Limpiar">
+								</div>
+							</div>
+							<div class="text-center">
+								<input type="submit" id="submit_input" class="btn btn-info" value="Guardar">
+								
+							</div>
+						</form>
+						
+					</div>
+					<div class="row">
+						<br><br>
 						<em><u>Hecho</u>: Diseño completo (Responsive 100%), 
 						Generacion de select de usuarios por JS mediante un metodo. Cargar los departamentos por AJAX
-						a partir de un txt. Pruebas con añadir una clase y editarla por JS para la validacion de los campos,
+						a partir de un txt. Añadir una clase y editarla por JS para la validacion de los campos,
 						añadiendo una clase de bootstrap (has-error), para ponerla en rojo si esta mal.</em>
 						<br><br>
 						<em><u>Por hacer</u>: INSERT o UPDATE en funcion de si estamos registrando o modificando datos. 
-						Validaciones por JS...</em>
-						<h2>Registro / Modificación</h2>
-						<div class="row">
-							<form>
-								<div class="col-md-6 form-group">
-									<label>Identificador: </label>
-									<select class="form-control" id="idreg_select">
-										<option id="opt00" value="selecciona usuario">Selecciona Usuario</option>
-										
-									</select>
-									<!-- <input id="identificador_input" class="form-control" type="text" placeholder="ds000" readonly> -->
-								</div>
-								<div class="col-md-6 form-group" id="nombre_div">
-									<label>Nombre: </label>
-									<input id="nombre_input" class="form-control" type="text" placeholder="Nombre Completo">
-								</div>
-								<div class="col-md-6 form-group" id="icm_div">
-									<label>Abrev. ICM</label>
-									<input id="icm_input" class="form-control" type="text" placeholder="ICM (ej: AAA00)">
-								</div>
-								<div class="col-md-6 form-group" id="departamento_div">
-									<label>Departamento: </label>
-									<select class="form-control" id="depart_select">
-										
-									</select>
-									<!-- <input id="departamento_input" class="form-control" type="text" placeholder="Departamento"> -->
-								</div>
-								<div class="col-md-6 form-group">
-									<label>Tutor: </label>
-									<select class="form-control" id="tutor_select">
-										<option value="El profesor no es tutor">Selecciona Usuario</option>
-										
-									</select>
-									<!-- <input id="tutor_input" class="form-control" type="text" placeholder="Grupo/No es tutor"> -->
-								</div>
-								<div class="col-md-6 form-group" id="email_div">
-									<label>Email: </label>
-									<input id="email_input" class="form-control" type="text" placeholder="ej: ejemplo@direccion.com">
-								</div>
-								<div class="col-md-6 form-group" id="clave_div">
-									<label>Clave: </label>
-									<input id="clave_input" class="form-control" type="password" placeholder="Clave de acceso">
-								</div>
-								<div class="col-md-6 form-group" id="claverep_div">
-									<label>Repita Clave: </label>
-									<input id="claverep_input" class="form-control" type="password" placeholder="Rapita la clave de acceso">
-								</div>
-								<div class="text-center">
-									<button type="reset" class="btn btn-info">Guardar</button>
-								</div>
-							</form>
-						</div>
+						Validaciones por JS.</em>
 					</div>
 				</div>
 			</div>
