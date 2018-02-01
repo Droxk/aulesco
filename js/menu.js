@@ -1,4 +1,5 @@
 var menu;
+var iconoMenu;
 var cargarMenu;
 var infoSesion;
 
@@ -52,6 +53,9 @@ function asignarEventos(){
 	if (document.readyState == 'complete') {
 		infoSesion = document.getElementById("info_sesion");
 		menu = document.getElementById("menu");
+		iconoMenu = document.getElementById("icono_menu");
+		
+		iconoMenu.addEventListener("hover", colocarMenu);
 	}
 }
 
