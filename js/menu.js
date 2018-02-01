@@ -1,4 +1,6 @@
 var menu;
+var cargarMenu;
+var infoSesion;
 
 // AJAX ----------------------------------------------------------------------------------
 // Obtener la instancia del objeto XMLHttpRequest creando una variable
@@ -27,9 +29,14 @@ function realizarPeticion(){
 function obtenerContenido() {
 	if(peticion_departamentos.readyState == 4) {
 		if(peticion_departamentos.status == 200) {
-			menu.innerHTML += peticion_departamentos.responseText;
+			cargarMenu += peticion_departamentos.responseText;
 		}
 	}
+}
+
+function colocarMenu() {
+	infoSesion.style.display = "none";
+	menu.innerHTML = cargarMenu;
 }
 	
 window.onload = function (){
@@ -43,6 +50,7 @@ window.onload = function (){
 function asignarEventos(){
 	
 	if (document.readyState == 'complete') {
+		infoSesion = document.getElementById("info_sesion");
 		menu = document.getElementById("menu");
 	}
 }
