@@ -1,3 +1,5 @@
+var menu;
+
 // AJAX ----------------------------------------------------------------------------------
 // Obtener la instancia del objeto XMLHttpRequest creando una variable
 function instanciar(){
@@ -25,7 +27,7 @@ function realizarPeticion(){
 function obtenerContenido() {
 	if(peticion_departamentos.readyState == 4) {
 		if(peticion_departamentos.status == 200) {
-			depart_select.innerHTML += peticion_departamentos.responseText;
+			menu.innerHTML += peticion_departamentos.responseText;
 		}
 	}
 }
@@ -41,9 +43,7 @@ window.onload = function (){
 function asignarEventos(){
 	
 	if (document.readyState == 'complete') {
-		idRegSelect = document.getElementById("idreg_select");
-		
-		departamentoSelect.addEventListener("blur", validaDepartamento);
+		menu = document.getElementById("menu");
 	}
 }
 
