@@ -55,7 +55,7 @@ function asignarEventos(){
 		menu = document.getElementById("menu");
 		iconoMenu = document.getElementById("icono_menu");
 		
-		iconoMenu.addEventListener("hover", colocarMenu);
+		iconoMenu.addEventListener("mouseover", colocarMenu);
 	}
 }
 
