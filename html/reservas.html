@@ -41,33 +41,39 @@
 		</nav>
 		
 		<div class="container">
-			<h2>Reserva de aulas</h2>
-			<p><span class="bg-success">Disponible</span><span class="bg-primary">Tu reserva</span><span class="bg-danger">Ocupado</span></p>
-			<form class="form-inline" action="/action_page.php" method="post">
-				<div class="form-group">
-					<label for="email">Aula:</label>
-					<select class="form-control" id="aula_select">
-						<option value="011">Audiovisuales</option>
-						<option value="016">Intormática 01</option>
-						<option value="223">Intormática 02</option>
-						<option value="106">Múltiple 01</option>
-						<option value="107">Múltiple 02</option>
-						<option value="108">Múltiple 03</option>
-					</select>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2" id="login_div">
+					<h2>Reserva de aulas</h2>
+					<p><span class="bg-success">Disponible</span><span class="bg-primary">Tu reserva</span><span class="bg-danger">Ocupado</span></p>
+					<form class="form-inline" action="/action_page.php" method="post">
+						<div class="form-group">
+							<label for="email">Aula:</label>
+							<select class="form-control" id="aula_select">
+								<option value="011">Audiovisuales</option>
+								<option value="016">Intormática 01</option>
+								<option value="223">Intormática 02</option>
+								<option value="106">Múltiple 01</option>
+								<option value="107">Múltiple 02</option>
+								<option value="108">Múltiple 03</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="pwd">Tipo de reserva:</label>
+							<select class="form-control" id="tiporeserva_select">
+								<option value="individual">Un día</option>
+								<option value="multiple">Varios días</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Día de la reserva:</label>
+							<input class="form-control" type="date" id="fecha_input">
+						</div>
+						<div class="row">
+							<button type="submit" class="btn btn-default">Guardar</button>
+						</div>
+					</form>
 				</div>
-				<div class="form-group">
-					<label for="pwd">Tipo de reserva:</label>
-					<select class="form-control" id="tiporeserva_select">
-						<option value="individual">Un día</option>
-						<option value="multiple">Varios días</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<label>Día de la reserva:</label>
-					<input class="form-control" type="date" id="fecha_input">
-				</div>
-				<button type="submit" class="btn btn-default">Guardar</button>
-			</form>
+			</div>
 		</div>
 	</body>
 </html>
