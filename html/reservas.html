@@ -58,10 +58,13 @@
 				<div class="form-group">
 					<label for="pwd">Tipo de reserva:</label>
 					<select class="form-control" id="tiporeserva_select">
+						<option value="individual">Un día</option>
+						<option value="multiple">Varios días</option>
 					</select>
 				</div>
 				<div class="checkbox">
-					<label><input type="date" id="fecha_input"> Remember me</label>
+					<label>Día de la reserva:</label>
+					<input type="date" id="fecha_input">
 				</div>
 				<button type="submit" class="btn btn-default">Guardar</button>
 			</form>
