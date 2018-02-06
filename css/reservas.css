@@ -1,0 +1,25 @@
+.glyphicon.glyphicon-menu-hamburger{
+    font-size: 75px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding: 20px;
+}
+
+.glyphicon.glyphicon-edit, .glyphicon.glyphicon-share, .glyphicon.glyphicon-open-file, .glyphicon.glyphicon-copy {
+	font-size: 45px;
+	margin-bottom: 10px;
+	padding: 20px;
+}
+
+.glyphicon.glyphicon-remove-circle {
+	font-size: 30px;
+}
+
+#icono_menu {
+	border: 6px solid #333333;
+	border-radius: 100px;
+}
+
+h3 {
+	margin-bottom: 20px;
+}
