@@ -43,19 +43,27 @@
 		<div class="container">
 			<h2>Reserva de aulas</h2>
 			<p><span class="bg-success">Disponible</span><span class="bg-primary">Tu reserva</span><span class="bg-danger">Ocupado</span></p>
-			<form class="form-inline" action="/action_page.php">
+			<form class="form-inline" action="/action_page.php" method="post">
 				<div class="form-group">
-					<label for="email">Email:</label>
-					<input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+					<label for="email">Aula:</label>
+					<select class="form-control" id="aula_select">
+						<option value="011">Audiovisuales</option>
+						<option value="016">Intormática 01</option>
+						<option value="223">Intormática 02</option>
+						<option value="106">Múltiple 01</option>
+						<option value="107">Múltiple 02</option>
+						<option value="108">Múltiple 03</option>
+					</select>
 				</div>
 				<div class="form-group">
-					<label for="pwd">Password:</label>
-					<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+					<label for="pwd">Tipo de reserva:</label>
+					<select class="form-control" id="tiporeserva_select">
+					</select>
 				</div>
 				<div class="checkbox">
-					<label><input type="checkbox" name="remember"> Remember me</label>
+					<label><input type="date" id="fecha_input"> Remember me</label>
 				</div>
-				<button type="submit" class="btn btn-default">Submit</button>
+				<button type="submit" class="btn btn-default">Guardar</button>
 			</form>
 		</div>
 	</body>
