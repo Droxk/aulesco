@@ -6,7 +6,7 @@
 		<h3>Reserva de aulas</h3>
 		<div class="row">
 			<div class="col-sm-6">
-				<a href="#"><span id="icono_menu" class="glyphicon glyphicon-edit"></span></a>
+				<a href="./reservas.html"><span id="icono_menu" class="glyphicon glyphicon-edit"></span></a>
 				<div><kbd>Nueva reserva</kbd></div>
 			</div>
 			<div class="col-sm-6">
