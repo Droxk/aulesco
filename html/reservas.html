@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="es">
-	<head>
-		<meta charset="utf-8">
+<!-- saved from url=(0067)file:///D:/_Modulos/Dise%C3%B1o%20Web/_A/aulesco/html/reservas.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./Aulesco_files/bootstrap.min.css">
 		<!-- jQuery library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="./Aulesco_files/jquery.min.js.descarga"></script>
 		<!-- Latest compiled JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="./Aulesco_files/bootstrap.min.js.descarga"></script>
 		
 		<title>Aulesco</title>
-		<script type="text/javascript" src="../js/reservas.js"></script>
-		<link rel="stylesheet" type="text/css" href="../css/reservas.css">
-		<link rel="stylesheet" type="text/css" href="../css/general.css">
-		<link rel="icon" href="../img/book.png">
+		<script type="text/javascript" src="./Aulesco_files/reservas.js.descarga"></script>
+		<link rel="stylesheet" type="text/css" href="./Aulesco_files/reservas.css">
+		<link rel="stylesheet" type="text/css" href="./Aulesco_files/general.css">
+		<link rel="icon" href="file:///D:/_Modulos/Dise%C3%B1o%20Web/_A/aulesco/img/book.png">
 	</head>
 	<body>
 		<div id="header">
-			<img src="../img/logo250x250.png" class="img-responsive center-block" alt="logo" id="logo">
+			<img src="./Aulesco_files/logo250x250.png" class="img-responsive center-block" alt="logo" id="logo">
 		</div>
 		<nav class="navbar navbar-inverse navbar-static-top">
 			<div class="container-fluid">
@@ -28,13 +28,13 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span> 
 					</button>
-					<a class="navbar-brand" href="../index.html">Aulesco</a>
+					<a class="navbar-brand" href="file:///D:/_Modulos/Dise%C3%B1o%20Web/_A/aulesco/index.html">Aulesco</a>
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="../index.html"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Ayuda</a></li>
-						<li><a href="./reservas.html"><span class="glyphicon glyphicon-refresh"></span> Recargar</a></li>
+						<li><a href="file:///D:/_Modulos/Dise%C3%B1o%20Web/_A/aulesco/index.html"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
+						<li><a href="file:///D:/_Modulos/Dise%C3%B1o%20Web/_A/aulesco/html/reservas.html#"><span class="glyphicon glyphicon-question-sign"></span> Ayuda</a></li>
+						<li><a href="file:///D:/_Modulos/Dise%C3%B1o%20Web/_A/aulesco/html/reservas.html"><span class="glyphicon glyphicon-refresh"></span> Recargar</a></li>
 					</ul>
 				</div>
 			</div>
@@ -42,38 +42,77 @@
 		
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2" id="login_div">
+				<div class="col-md-10 col-md-offset-1" id="reservas_div">
 					<h2>Reserva de aulas</h2>
-					<p><span class="bg-success">Disponible</span><span class="bg-primary">Tu reserva</span><span class="bg-danger">Ocupado</span></p>
-					<form class="form-inline" action="/action_page.php" method="post">
-						<div class="form-group">
-							<label for="email">Aula:</label>
-							<select class="form-control" id="aula_select">
-								<option value="011">Audiovisuales</option>
-								<option value="016">Intormática 01</option>
-								<option value="223">Intormática 02</option>
-								<option value="106">Múltiple 01</option>
-								<option value="107">Múltiple 02</option>
-								<option value="108">Múltiple 03</option>
-							</select>
+					<p>
+						<span class="bg-success">Disponible</span><br>
+						<span class="bg-primary">Tu reserva</span><br>
+						<span class="bg-danger">Ocupado</span><br>
+					</p>
+					<div class="row">
+						<form>
+							<div class="col-md-6 form-group" id="aula_div">
+								<label>Aula: </label>
+								<select class="form-control" id="aula_select">
+									<option value="011">Audiovisuales</option>
+									<option value="016">Intormática 01</option>
+									<option value="223">Intormática 02</option>
+									<option value="106">Múltiple 01</option>
+									<option value="107">Múltiple 02</option>
+									<option value="108">Múltiple 03</option>
+								</select>
+							</div>
+							<div class="col-md-6 form-group" id="tiporeserva_div">
+								<label for="pwd">Tipo de reserva:</label>
+								<select class="form-control" id="tiporeserva_select">
+									<option value="individual">Un día</option>
+									<option value="multiple">Varios días</option>
+								</select>
+							</div>
+							<div class="col-md-6 form-group" id="fecha_div">
+								<label>Día de reserva:</label>
+								<input class="form-control" type="date" id="fecha_input">
+							</div>
+							
+							<div class="col-md-6 form-group" id="botones_div">
+								<label>Operaciones:</label><br>
+								<button type="button" class="btn btn-info col-md-3 col-md-offset-1">
+									<span class="glyphicon glyphicon-search"></span> Buscar&nbsp;
+								</button>
+								<button type="button" class="btn btn-success col-md-3 col-md-offset-1">
+									<span class="glyphicon glyphicon-download-alt"></span> Guardar&nbsp;
+								</button>
+								<button type="button" class="btn btn-danger col-md-3 col-md-offset-1">
+									<span class="glyphicon glyphicon-trash"></span> Borrar&nbsp;
+								</button>
+							</div>
+						</form>
+						
+						<div class="col-md-12 form-group table-responsive">          
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th class="col-xs-1">#</th>
+										<th class="col-xs-3">Profesor</th>
+										<th class="col-xs-3">Aula</th>
+										<th class="col-xs-3">Fecha</th>
+										<th class="col-xs-2">Hora</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="success">1</td>
+										<td class="active">Anna</td>
+										<td class="info">011</td>
+										<td class="warning">08/02/2018</td>
+										<td class="danger">2ª</td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
-						<div class="form-group">
-							<label for="pwd">Tipo de reserva:</label>
-							<select class="form-control" id="tiporeserva_select">
-								<option value="individual">Un día</option>
-								<option value="multiple">Varios días</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<label>Día de la reserva:</label>
-							<input class="form-control" type="date" id="fecha_input">
-						</div>
-						<div class="row">
-							<button type="submit" class="btn btn-default">Guardar</button>
-						</div>
-					</form>
+					</div>
 				</div>
 			</div>
 		</div>
-	</body>
-</html>
+	
+</body></html>
