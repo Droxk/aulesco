@@ -23,3 +23,13 @@
 h3 {
 	margin-bottom: 20px;
 }
+
+#leyenda span{
+	padding-left: 18px;
+	border-radius: 18px;
+}
+
+#leyenda {
+	margin-top: 20px;
+	color: #4f4f4f;
+}
