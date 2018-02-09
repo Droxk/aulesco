@@ -36,9 +36,8 @@ h3 {
 
 td:last-child{
     font-weight: bold;
-	text-align: center;
 }
 
 td select {
-	position: absolute;
+	float: right;
 }
