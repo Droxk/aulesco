@@ -33,3 +33,12 @@ h3 {
 	margin-top: 20px;
 	color: #4f4f4f;
 }
+
+td:last-child{
+    font-weight: bold;
+	text-align: center;
+}
+
+td select {
+	position: absolute;
+}
