@@ -35,9 +35,16 @@ h3 {
 }
 
 td:last-child{
+	text-align: center;
     font-weight: bold;
 }
 
 td select {
 	float: right;
+	width: 60px !important;
+}
+
+td select option {
+	padding-top: 40x;
+	padding-bottom: 4x;
 }
