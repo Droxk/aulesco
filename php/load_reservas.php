@@ -14,7 +14,7 @@
 	}
 	
 	$switch=false;
-	$consulta = "SELECT * FROM reservas INNER JOIN profesores ON reservas.profesor_r = profesores.ds_p;";
+	$consulta = "SELECT * FROM reservas INNER JOIN profesores ON reservas.profesor_r = profesores.ds_p WHERE hora_r = 1;";
 	$result = mysqli_query($db, $consulta);
 	
 	if (!$result) {
@@ -40,7 +40,15 @@
 		}
 		
 		if (!$switch) {
-			echo "error".","."error";
+			echo "
+			<tr>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td><span class='glyphicon glyphicon-hand-up'></span></td>
+			</tr>
+			";
 		}
 	}
 	mysqli_close($db);

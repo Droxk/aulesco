@@ -15,6 +15,10 @@
 	font-size: 30px;
 }
 
+.glyphicon.glyphicon-hand-up {
+	font-size: 20px;
+}
+
 #icono_menu {
 	border: 6px solid #333333;
 	border-radius: 100px;
