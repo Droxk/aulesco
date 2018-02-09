@@ -14,7 +14,7 @@
 	}
 	
 	$switch=false;
-	$consulta = "SELECT * FROM reservas";
+	$consulta = "SELECT * FROM reservas INNER JOIN profesores ON reservas.profesor_r = profesores.ds_p;";
 	$result = mysqli_query($db, $consulta);
 	
 	if (!$result) {
@@ -23,17 +23,18 @@
 		while ($valor = mysqli_fetch_array($result)) {
 			$numero_r = $valor['numero_r'];
 			$hora_r = $valor['hora_r'];
-			$profesor_r = $valor['profesor_r'];
+			$nombre_p = $valor['nombre_p'];
 			$fecha_r = $valor['fecha_r'];
 			$aula_r = $valor['aula_r'];
-			$switch=true;
+			$switch = true;
+			
 			echo "
 			<tr>
 				<td>$numero_r</td>
 				<td>$aula_r</td>
-				<td>$profesor_r</td>
+				<td>$nombre_p</td>
 				<td>$fecha_r</td>
-				<td class='danger'>$hora_r</td>
+				<td>$hora_r</td>
 			</tr>
 			";
 		}

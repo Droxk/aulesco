@@ -34,8 +34,15 @@ h3 {
 	color: #4f4f4f;
 }
 
-td:last-child{
+th, td{
 	text-align: center;
+}
+
+td:nth-child(3) {
+   text-align: left;
+}
+
+td:last-child{
     font-weight: bold;
 }
 
