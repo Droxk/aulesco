@@ -15,6 +15,25 @@
 		<link rel="stylesheet" type="text/css" href="../css/reservas.css">
 		<link rel="stylesheet" type="text/css" href="../css/general.css">
 		<link rel="icon" href="../img/book.png">
+		
+		<!-- Calendario JQUERY -->
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script>
+		$(function(){
+		  
+
+		  $( '#fecha_input' ).datepicker({ 
+		  		minDate: "now", //today is 23/01/2018 
+		  		maxDate: +7 
+		  	});
+
+
+
+		  $( "#fecha_input" ).datepicker( "option", "dateFormat", "dd/mm/yy" );
+		 
+		});
+  </script>
 	</head>
 	<body>
 		<div id="header">
@@ -66,7 +85,7 @@
 							</div>
 							<div class="col-md-3 form-group" id="fecha_div">
 								<label>Día de reserva:</label>
-								<input class="form-control" type="date" id="fecha_input">
+								<input class="form-control" type="text" id="fecha_input">
 							</div>
 							<div class="col-md-3 form-group" id="hora_div">
 								<label>Hora:</label>
