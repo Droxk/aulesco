@@ -27,7 +27,7 @@ function realizarPeticion(){
 function obtenerContenido() {
 	if(peticion_http_txt.readyState == 4) {
 		if(peticion_http_txt.status == 200) {
-			tablaReservas.innerHTML += peticion_http_txt.responseText;	  
+			tablaReservas.innerHTML = peticion_http_txt.responseText;
 		}
 	}
 }

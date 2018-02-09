@@ -27,15 +27,15 @@
 			$fecha_r = $valor['fecha_r'];
 			$aula_r = $valor['aula_r'];
 			$switch=true;
-			echo '
+			echo "
 			<tr>
 				<td>$numero_r</td>
 				<td>$aula_r</td>
 				<td>$profesor_r</td>
 				<td>$fecha_r</td>
-				<td class="danger">$hora_rª</td>
+				<td class='danger'>$hora_rª</td>
 			</tr>
-			';
+			";
 		}
 		
 		if (!$switch) {
