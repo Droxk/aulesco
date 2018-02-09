@@ -1,56 +1,50 @@
-var menu;
-var iconoMenu;
-var infoSesion;
+var tablaReservas;
 
-// AJAX ----------------------------------------------------------------------------------
+// AJAX
 // Obtener la instancia del objeto XMLHttpRequest creando una variable
 function instanciar(){
 	if(window.XMLHttpRequest) {
-		peticion_menu= new XMLHttpRequest();
+		peticion_http_txt= new XMLHttpRequest();
 	} else if (window.ActiveXObject) {
-		peticion_menu= new ActiveXObject("Microsoft.XMLHTTP");
+		peticion_http_txt= new ActiveXObject("Microsoft.XMLHTTP");
 	}
 }
 
 // Preparar la funcion de respuesta
 function prepararPeticion(){
-	peticion_menu.onreadystatechange = obtenerContenido;
+	peticion_http_txt.onreadystatechange = obtenerContenido;
 }
 
 
 // Realizar peticion HTTP
 function realizarPeticion(){
-	peticion_menu.open('GET', 'http://192.168.3.176/workspace/aulesco/js/archivos/menu.txt', true);
-	peticion_menu.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	peticion_menu.send(null);
+	peticion_http_txt.open('POST', 'http://192.168.3.176/workspace/aulesco/php/load_reservas.php', true);
+	peticion_http_txt.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	peticion_http_txt.send(null);
 }
 
 
 function obtenerContenido() {
-	if(peticion_menu.readyState == 4) {
-		if(peticion_menu.status == 200) {
-			menu.innerHTML = peticion_menu.responseText;
+	if(peticion_http_txt.readyState == 4) {
+		if(peticion_http_txt.status == 200) {
+			tablaReservas.innerHTML += peticion_http_txt.responseText;	  
 		}
 	}
 }
-
-function colocarMenu() {
+	
+window.onload = function (){
 	instanciar();
 	prepararPeticion();
 	realizarPeticion();
-	infoSesion.style.display = "none";
 }
-
-// FIN AJAX ------------------------------------------------------------------------------------
+// FIN AJAX
 
 function asignarEventos(){
 	
 	if (document.readyState == 'complete') {
-		infoSesion = document.getElementById("info_sesion");
-		menu = document.getElementById("menu");
-		iconoMenu = document.getElementById("icono_menu");
+		tablaReservas = document.getElementById("tabla_reservas");
 		
-		iconoMenu.addEventListener("mouseover", colocarMenu);
+		//iconoMenu.addEventListener("mouseover", colocarMenu);
 	}
 }
 
