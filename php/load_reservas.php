@@ -33,7 +33,7 @@
 				<td>$aula_r</td>
 				<td>$profesor_r</td>
 				<td>$fecha_r</td>
-				<td class='danger'>$hora_r ª</td>
+				<td class='danger'>$hora_r</td>
 			</tr>
 			";
 		}
