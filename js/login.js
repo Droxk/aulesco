@@ -46,12 +46,6 @@ window.onload = function (){
 }
 // FIN AJAX
 
-
-function generaAleatorio(){
-	aleatorio = Math.floor((Math.random() * MAX_RANDOM) + MIN_RANDOM);
-	return aleatorio;
-}
-
 function rellenaArrayPositions(){
 	for(var i = 0; i < 3; i++){
 		randomPositions[i] = parseInt(Math.random()*6);
@@ -64,10 +58,19 @@ function rellenaArrayPositions(){
 }
 
 function casillasBloqueadas(){
+	//resetear casillas en cada cambio
+	for(i = 0; i < 3; i++){
+		arrayInputsPass[randomPositions[i]].style.backgroundImage = "";
+	}
+	rellenaArrayPositions();
+	console.log("change");
+	
 	for(i = 0; i < 3; i++){
 		arrayInputsPass[randomPositions[i]].style.backgroundImage = "url(./img/lock.png)";
 	}
 }
+
+
 
 function asignarEventos(){
 	
