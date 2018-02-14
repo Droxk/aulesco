@@ -4,7 +4,8 @@ var randomPositions = []; //tendra 3 numeros
 
 var selectUsuario;
 var arrayInputsPass = [];
-var global;
+var arrayBotonesTeclado = [];
+var arrayCifrasTeclado = [0,1,2,3,4,5,6,7,8,9];
 
 // AJAX
 
@@ -63,19 +64,33 @@ function casillasBloqueadas(){
 		arrayInputsPass[randomPositions[i]].style.backgroundImage = "";
 	}
 	rellenaArrayPositions();
-	console.log("change");
 	
 	for(i = 0; i < 3; i++){
 		arrayInputsPass[randomPositions[i]].style.backgroundImage = "url(./img/lock.png)";
 	}
 }
 
+function aleatorio(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+function asignarNumerosTeclado(array){
+	array.sort(function(a, b){return 0.5 - Math.random()}); // Ordena el array en orden aleatorio
+	
+	for(i = 0; i < arrayBotonesTeclado.length-2; i++){
+		arrayBotonesTeclado[i].innerHTML = array[i];
+		arrayBotonesTeclado[i].value = array[i];
+	}
+}
+
+function escribePassword(){
+	console.log("funciona");
+}
 
 
 function asignarEventos(){
 	
 	if (document.readyState == 'complete') {
-		rellenaArrayPositions();
 		selectUsuario = document.getElementById("select_usuario");
 		arrayInputsPass = [
 			document.getElementById("pwdBox1"),
@@ -85,8 +100,34 @@ function asignarEventos(){
 			document.getElementById("pwdBox5"),
 			document.getElementById("pwdBox6")
 		];
+		arrayBotonesTeclado = [
+			document.getElementById("c0"),
+			document.getElementById("c1"),
+			document.getElementById("c2"),
+			document.getElementById("c3"),
+			document.getElementById("c4"),
+			document.getElementById("c5"),
+			document.getElementById("c6"),
+			document.getElementById("c7"),
+			document.getElementById("c8"),
+			document.getElementById("c9"),
+			document.getElementById("bt"),
+			document.getElementById("bu")
+		];
 		
+		rellenaArrayPositions();
+		asignarNumerosTeclado(arrayCifrasTeclado);
 		selectUsuario.addEventListener("change", casillasBloqueadas);
+		// arrayBotonesTeclado[0].addEventListener("click", escribePassword);
+		// arrayBotonesTeclado[1].addEventListener("click", escribePassword);
+		// arrayBotonesTeclado[2].addEventListener("click", escribePassword);
+		// arrayBotonesTeclado[3].addEventListener("click", escribePassword);
+		// arrayBotonesTeclado[4].addEventListener("click", escribePassword);
+		// arrayBotonesTeclado[5].addEventListener("click", escribePassword);
+		// arrayBotonesTeclado[6].addEventListener("click", escribePassword);
+		// arrayBotonesTeclado[7].addEventListener("click", escribePassword);
+		// arrayBotonesTeclado[8].addEventListener("click", escribePassword);
+		// arrayBotonesTeclado[9].addEventListener("click", escribePassword);
 	}
 }
 
