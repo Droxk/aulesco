@@ -1,0 +1,25 @@
+.modal-header{
+	background-color: #262626;
+	color: #f7f7f7;
+}
+
+#tablaIconos{
+	margin: 5% 0;
+}
+
+#tablaIconos table {
+    float: none;
+    margin: 0 auto;
+	border-spacing: 5px;
+    border-collapse: separate;
+}
+
+#tablaIconos td {
+	text-align: center;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+td .glyphicon {
+	font-size: 50px;
+}
