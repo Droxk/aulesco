@@ -9,41 +9,85 @@ var arrayCifrasTeclado = [0,1,2,3,4,5,6,7,8,9];
 
 // AJAX
 
-// Obtener la instancia del objeto XMLHttpRequest creando una variable
-function instanciar(){
-	if(window.XMLHttpRequest) {
-		peticion_http_txt= new XMLHttpRequest();
-	} else if (window.ActiveXObject) {
-		peticion_http_txt= new ActiveXObject("Microsoft.XMLHTTP");
-	}
-}
-
-// Preparar la funcion de respuesta
-function prepararPeticion(){
-	peticion_http_txt.onreadystatechange = obtenerContenido;
-}
-
-
-// Realizar peticion HTTP
-function realizarPeticion(){
-	peticion_http_txt.open('POST', 'http://192.168.3.176/workspace/aulesco/php/load_users.php', true);
-	peticion_http_txt.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	peticion_http_txt.send(null);
-}
-
-
-function obtenerContenido() {
-	if(peticion_http_txt.readyState == 4) {
-		if(peticion_http_txt.status == 200) {
-			selectUsuario.innerHTML += peticion_http_txt.responseText;	  
+function cargarSelectUsuarios(){
+	// Obtener la instancia del objeto XMLHttpRequest creando una variable
+	function instanciar(){
+		if(window.XMLHttpRequest) {
+			pedir_usuarios= new XMLHttpRequest();
+		} else if (window.ActiveXObject) {
+			pedir_usuarios= new ActiveXObject("Microsoft.XMLHTTP");
 		}
 	}
-}
+
+	// Preparar la funcion de respuesta
+	function prepararPeticion(){
+		pedir_usuarios.onreadystatechange = obtenerContenido;
+	}
+
+
+	// Realizar peticion HTTP
+	function realizarPeticion(){
+		pedir_usuarios.open('POST', 'http://192.168.3.176/workspace/aulesco/php/load_users.php', true);
+		pedir_usuarios.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		pedir_usuarios.send(null);
+	}
+
+
+	function obtenerContenido() {
+		if(pedir_usuarios.readyState == 4) {
+			if(pedir_usuarios.status == 200) {
+				selectUsuario.innerHTML += pedir_usuarios.responseText;	  
+			}
+		}
+	}
 	
-window.onload = function (){
 	instanciar();
 	prepararPeticion();
 	realizarPeticion();
+}
+
+function obtenerPasswordUsuario(){
+	// Obtener la instancia del objeto XMLHttpRequest creando una variable
+	function instanciar(){
+		if(window.XMLHttpRequest) {
+			pedir_password= new XMLHttpRequest();
+		} else if (window.ActiveXObject) {
+			pedir_password= new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	}
+
+	// Preparar la funcion de respuesta
+	function prepararPeticion(){
+		pedir_password.onreadystatechange = obtenerContenido;
+	}
+
+
+	// Realizar peticion HTTP
+	function realizarPeticion(){
+		pedir_password.open('POST', 'http://192.168.3.176/workspace/aulesco/php/obtener_password.php', true);
+		pedir_password.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		pedir_password.send(null);
+	}
+
+
+	function obtenerContenido() {
+		if(pedir_password.readyState == 4) {
+			if(pedir_password.status == 200) {
+				selectUsuario.innerHTML += pedir_password.responseText;
+				console.log(pedir_password.responseText);
+			}
+		}
+	}
+	
+	instanciar();
+	prepararPeticion();
+	realizarPeticion();
+	console.log(selectUsuario.value);
+}
+
+// Cuando este lista la ventana (con el documento y todo lo demas)
+window.onload = function (){
+	cargarSelectUsuarios();
 }
 // FIN AJAX
 
@@ -89,7 +133,6 @@ function escribePassword(){
 
 
 function asignarEventos(){
-	
 	if (document.readyState == 'complete') {
 		selectUsuario = document.getElementById("select_usuario");
 		arrayInputsPass = [
@@ -101,9 +144,9 @@ function asignarEventos(){
 			document.getElementById("pwdBox6")
 		];
 		arrayBotonesTeclado = [
-			document.getElementById("c0"),
-			document.getElementById("c1"),
-			document.getElementById("c2"),
+			document.getElementById("c0"),	// cifra 0
+			document.getElementById("c1"),	// cifra 1
+			document.getElementById("c2"),	// ...
 			document.getElementById("c3"),
 			document.getElementById("c4"),
 			document.getElementById("c5"),
@@ -111,23 +154,14 @@ function asignarEventos(){
 			document.getElementById("c7"),
 			document.getElementById("c8"),
 			document.getElementById("c9"),
-			document.getElementById("bt"),
-			document.getElementById("bu")
+			document.getElementById("bt"),	// borrar todo
+			document.getElementById("bu")	// borrar ultimo
 		];
 		
 		rellenaArrayPositions();
 		asignarNumerosTeclado(arrayCifrasTeclado);
 		selectUsuario.addEventListener("change", casillasBloqueadas);
-		// arrayBotonesTeclado[0].addEventListener("click", escribePassword);
-		// arrayBotonesTeclado[1].addEventListener("click", escribePassword);
-		// arrayBotonesTeclado[2].addEventListener("click", escribePassword);
-		// arrayBotonesTeclado[3].addEventListener("click", escribePassword);
-		// arrayBotonesTeclado[4].addEventListener("click", escribePassword);
-		// arrayBotonesTeclado[5].addEventListener("click", escribePassword);
-		// arrayBotonesTeclado[6].addEventListener("click", escribePassword);
-		// arrayBotonesTeclado[7].addEventListener("click", escribePassword);
-		// arrayBotonesTeclado[8].addEventListener("click", escribePassword);
-		// arrayBotonesTeclado[9].addEventListener("click", escribePassword);
+		arrayBotonesTeclado[0].addEventListener("click", obtenerPasswordUsuario);
 	}
 }
 
