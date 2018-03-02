@@ -1,11 +1,17 @@
 var MAX_RANDOM = 6;
 var MIN_RANDOM = 1;
+const BOTON_BT = 11;
+const BOTON_BU = 10;
+
 var randomPositions = []; //tendra 3 numeros
 
 var selectUsuario;
 var arrayInputsPass = [];
 var arrayBotonesTeclado = [];
 var arrayCifrasTeclado = [0,1,2,3,4,5,6,7,8,9];
+var arrayClaveIntroducida = ["","","","","",""];
+
+var divPwd;
 
 // AJAX
 
@@ -104,6 +110,11 @@ function rellenaArrayPositions(){
 
 function casillasBloqueadas(){
 	//resetear casillas en cada cambio
+	for(i = 0; i < arrayClaveIntroducida.length; i++){
+		arrayInputsPass[i].value = "";
+		arrayClaveIntroducida[i] = "";
+	}
+	
 	for(i = 0; i < 3; i++){
 		arrayInputsPass[randomPositions[i]].style.backgroundImage = "";
 	}
@@ -127,14 +138,43 @@ function asignarNumerosTeclado(array){
 	}
 }
 
-function escribePassword(){
-	console.log("funciona");
+// ocultar div clave en caso de que el usuario seleccionado no este registrado
+// divPwd.style.display = "none";
+
+function escribePassword(e){
+	console.log("Posiciones bloqueadas: " + randomPositions[0] + " " + randomPositions[1] + " " + randomPositions[2]);
+
+	for(i = 0; i < arrayClaveIntroducida.length; i++){
+		if(selectUsuario.value != "none"){
+			if(arrayClaveIntroducida[i] == ""){
+				if(arrayInputsPass[i].style.backgroundImage == ""){
+					arrayInputsPass[i].value = e.target.value;
+					arrayClaveIntroducida[i] = e.target.value;
+					break;
+				} else {
+					arrayClaveIntroducida[i] = "*";
+				}
+			}
+		}
+	}
+	console.log(arrayClaveIntroducida[0] + arrayClaveIntroducida[1] + arrayClaveIntroducida[2] + arrayClaveIntroducida[3] + arrayClaveIntroducida[4] + arrayClaveIntroducida[5]);
 }
 
+function borrarUltimo(){
+	
+}
+
+function borrarTodo(){
+	for(i = 0; i < arrayClaveIntroducida.length; i++){
+		arrayInputsPass[i].value = "";
+		arrayClaveIntroducida[i] = "";
+	}
+}	
 
 function asignarEventos(){
 	if (document.readyState == 'complete') {
 		selectUsuario = document.getElementById("select_usuario");
+		divPwd = document.getElementById("clave_div");
 		arrayInputsPass = [
 			document.getElementById("pwdBox1"),
 			document.getElementById("pwdBox2"),
@@ -161,7 +201,12 @@ function asignarEventos(){
 		rellenaArrayPositions();
 		asignarNumerosTeclado(arrayCifrasTeclado);
 		selectUsuario.addEventListener("change", casillasBloqueadas);
-		arrayBotonesTeclado[0].addEventListener("click", obtenerPasswordUsuario);
+		// Eventos botones teclado
+		for(i = 0; i < arrayBotonesTeclado.length-2; i++){
+			arrayBotonesTeclado[i].addEventListener("click", escribePassword);
+		}
+		arrayBotonesTeclado[BOTON_BU].addEventListener("click", borrarUltimo);
+		arrayBotonesTeclado[BOTON_BT].addEventListener("click", borrarTodo);
 	}
 }
 
