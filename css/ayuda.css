@@ -3,23 +3,26 @@
 	color: #f7f7f7;
 }
 
-#tablaIconos{
-	margin: 5% 0;
+#div_tablaIconos{
+	
 }
 
-#tablaIconos table {
+#div_tablaIconos table {
     float: none;
     margin: 0 auto;
-	border-spacing: 5px;
+	border-spacing: 10px;
     border-collapse: separate;
 }
 
-#tablaIconos td {
+#div_tablaIconos td {
 	text-align: center;
-	padding-left: 10%;
-	padding-right: 10%;
 }
 
 td .glyphicon {
 	font-size: 50px;
+}
+
+tr:last-child td:last-child{
+	padding-top: 10%;
+	text-align: center;
 }

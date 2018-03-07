@@ -33,7 +33,7 @@ function cargarSelectUsuarios(){
 
 	// Realizar peticion HTTP
 	function realizarPeticion(){
-		pedir_usuarios.open('POST', 'http://192.168.3.176/workspace/aulesco/php/load_users.php', true);
+		pedir_usuarios.open('POST', 'http://192.168.3.176/workspace/control_marzo/ejercicio2/load_users.php', true);
 		pedir_usuarios.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 		pedir_usuarios.send(null);
 	}
