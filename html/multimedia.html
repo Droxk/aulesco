@@ -12,6 +12,8 @@
 		
 		<title>Aulesco</title>
 		<script type="text/javascript" src="../js/multimedia.js"></script>
+		<script type="text/javascript" src="../js/ayuda.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/ayuda.css">
 		<link rel="stylesheet" type="text/css" href="../css/multimedia.css">
 		<link rel="stylesheet" type="text/css" href="../css/general.css">
 		<link rel="icon" href="../img/book.png">
@@ -33,7 +35,7 @@
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="../index.html"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Ayuda</a></li>
+						<li><a href="#" data-toggle="modal" data-target="#modalAyuda"><span class="glyphicon glyphicon-question-sign"></span> Ayuda</a></li>
 						<li><a href="./multimedia.html"><span class="glyphicon glyphicon-refresh"></span> Recargar</a></li>
 					</ul>
 				</div>
@@ -104,6 +106,43 @@
 								<p>Localización en Google Maps</p>
 							</div>
 						</a>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Modal -->
+			<div class="modal fade" id="modalAyuda" role="dialog">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Bienvenido a la Ayuda</h4>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+								<div class="col-md-12" id="div_tablaIconos">
+									<table>
+										<tr>
+											<td><span class="glyphicon glyphicon-home" id="icono_inicio"></span></td>
+											<td><span class="glyphicon glyphicon-user" id="icono_registro"></span></td>
+											<td><span class="glyphicon glyphicon-question-sign" id="icono_ayuda"></span></td>
+											<td><span class="glyphicon glyphicon-refresh" id="icono_recargar"></span></td>
+											<td><span class="glyphicon glyphicon-menu-hamburger" id="icono_menu"></span></td>
+											<td><span class="glyphicon glyphicon-edit" id="icono_nreserva"></span></td>
+											<td><span class="glyphicon glyphicon-share" id="icono_creserva"></span></td>
+											<td><span class="glyphicon glyphicon-open-file" id="icono_nparte"></span></td>
+											<td><span class="glyphicon glyphicon-copy" id="icono_gparte"></span></td>
+										</tr>
+										<tr>
+											<td colspan="9" id="td_descripcion">Descripcion del icono</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+						</div>
 					</div>
 				</div>
 			</div>
