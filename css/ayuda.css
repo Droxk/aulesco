@@ -14,11 +14,11 @@
 	text-align: center;
 }
 
-td .glyphicon {
+#div_tablaIconos td .glyphicon {
 	font-size: 50px;
 }
 
-tr:last-child td:last-child{
+#div_tablaIconos tr:last-child td:last-child{
 	padding-top: 10%;
 	text-align: center;
 }
