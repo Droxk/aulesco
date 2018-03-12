@@ -8,13 +8,15 @@
 	$GLOBALS['DB_NAME'] = 'aulesco';
 	$db = mysqli_connect($GLOBALS['DB_IP'], $GLOBALS['DB_USER'], $GLOBALS['DB_PASS'], $GLOBALS['DB_NAME']);
 	
+	$dsSelect = $_POST['ds_select'];
+	
 	if (!$db) {
 		echo "No pudo conectarse a la BD: " . mysqli_error();
 		exit();
 	}
 	
 	$switch=false;
-	$consulta = "SELECT clave_p FROM profesores";
+	$consulta = "SELECT clave_p FROM profesores WHERE ds_p LIKE ". $dsSelect;
 	$result = mysqli_query($db, $consulta);
 	
 	if (!$result) {

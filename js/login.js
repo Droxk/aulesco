@@ -10,6 +10,7 @@ var arrayInputsPass = [];
 var arrayBotonesTeclado = [];
 var arrayCifrasTeclado = [0,1,2,3,4,5,6,7,8,9];
 var arrayClaveIntroducida = ["","","","","",""];
+var btnInicioSesion;
 
 var divPwd;
 
@@ -72,7 +73,7 @@ function obtenerPasswordUsuario(){
 	function realizarPeticion(){
 		pedir_password.open('POST', 'http://192.168.3.176/workspace/aulesco/php/obtener_password.php', true);
 		pedir_password.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-		pedir_password.send(null);
+		pedir_password.send("ds_select = " + selectUsuario.value);
 	}
 
 
@@ -161,7 +162,14 @@ function escribePassword(e){
 }
 
 function borrarUltimo(){
-	
+	for(i = arrayClaveIntroducida.length-1; i >= 0; i--){
+		if(arrayClaveIntroducida[i] != "*" && arrayClaveIntroducida[i] != ""){
+			arrayInputsPass[i].value = "";
+			arrayClaveIntroducida[i] = "";
+			break;
+		}
+		
+	}
 }
 
 function borrarTodo(){
@@ -175,6 +183,7 @@ function asignarEventos(){
 	if (document.readyState == 'complete') {
 		selectUsuario = document.getElementById("select_usuario");
 		divPwd = document.getElementById("clave_div");
+		btnInicioSesion = document.getElementById("iniciar_btn");
 		arrayInputsPass = [
 			document.getElementById("pwdBox1"),
 			document.getElementById("pwdBox2"),
@@ -194,8 +203,8 @@ function asignarEventos(){
 			document.getElementById("c7"),
 			document.getElementById("c8"),
 			document.getElementById("c9"),
-			document.getElementById("bt"),	// borrar todo
-			document.getElementById("bu")	// borrar ultimo
+			document.getElementById("bu"),	// borrar ultimo
+			document.getElementById("bt")	// borrar todo
 		];
 		
 		rellenaArrayPositions();
@@ -207,6 +216,7 @@ function asignarEventos(){
 		}
 		arrayBotonesTeclado[BOTON_BU].addEventListener("click", borrarUltimo);
 		arrayBotonesTeclado[BOTON_BT].addEventListener("click", borrarTodo);
+		btnInicioSesion.addEventListener("click", obtenerPasswordUsuario);
 	}
 }
 
