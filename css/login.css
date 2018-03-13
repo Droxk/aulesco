@@ -18,15 +18,38 @@
 	background-position: center; 
 }
 
-#div_teclado table{
+#div_teclado{
 	position: relative;
 	top: 0px;
 }
 
+.mover_teclado1{
+	position: relative;
+	top: -25px;
+}
+
+.mover_teclado2{
+	position: relative;
+	bottom: -25px;
+}
+
+.mover_teclado3{
+	position: relative;
+	right: -25px;
+}
+
+.mover_teclado4{
+	position: relative;
+	left: -25px;
+}
+
+
 #div_teclado{
 	margin-top: 20px;
-	padding-top: 3%;
+	padding-top: 5%;
 	padding-bottom: 20px;
+	width: 40%;
+	margin: 0 auto;
 }
 
 #div_teclado button{

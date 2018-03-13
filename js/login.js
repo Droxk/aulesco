@@ -11,7 +11,9 @@ var arrayBotonesTeclado = [];
 var arrayCifrasTeclado = [0,1,2,3,4,5,6,7,8,9];
 var arrayClaveIntroducida = ["","","","","",""];
 var btnInicioSesion;
-
+var teclado;
+var arrayTecladoY = [0,-1, 1];
+var arrayTecladoX = [0,-1, 1];
 var divPwd;
 
 // AJAX
@@ -109,6 +111,12 @@ function rellenaArrayPositions(){
 	}
 }
 
+function moverTeclado(){
+	var rdm = parseInt(Math.random()*4);
+	
+	teclado.className = "mover_teclado" + rdm;
+}
+
 function casillasBloqueadas(){
 	//resetear casillas en cada cambio
 	for(i = 0; i < arrayClaveIntroducida.length; i++){
@@ -184,6 +192,7 @@ function asignarEventos(){
 		selectUsuario = document.getElementById("select_usuario");
 		divPwd = document.getElementById("clave_div");
 		btnInicioSesion = document.getElementById("iniciar_btn");
+		teclado = document.getElementById("teclado");
 		arrayInputsPass = [
 			document.getElementById("pwdBox1"),
 			document.getElementById("pwdBox2"),
@@ -213,6 +222,7 @@ function asignarEventos(){
 		// Eventos botones teclado
 		for(i = 0; i < arrayBotonesTeclado.length-2; i++){
 			arrayBotonesTeclado[i].addEventListener("click", escribePassword);
+			arrayBotonesTeclado[i].addEventListener("click", moverTeclado);
 		}
 		arrayBotonesTeclado[BOTON_BU].addEventListener("click", borrarUltimo);
 		arrayBotonesTeclado[BOTON_BT].addEventListener("click", borrarTodo);
